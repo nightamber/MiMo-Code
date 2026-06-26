@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption } from "vite"
+import { defineConfig, type PluginOption } from "vite"
 import { solidStart } from "@solidjs/start/config"
 import { nitro } from "nitro/vite"
 import tailwindcss from "@tailwindcss/vite"
@@ -24,7 +24,7 @@ export default defineConfig({
     nitro({
       ...nitroConfig,
       baseURL: process.env.OPENCODE_BASE_URL,
-    }),
+    }) as unknown as PluginOption,
   ],
   server: {
     host: "0.0.0.0",

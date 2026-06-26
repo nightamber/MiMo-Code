@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption } from "vite"
+import { defineConfig, type PluginOption } from "vite"
 import { solidStart } from "@solidjs/start/config"
 import { nitro } from "nitro/vite"
 
@@ -13,7 +13,7 @@ export default defineConfig({
       cloudflare: {
         nodeCompat: true,
       },
-    }),
+    }) as unknown as PluginOption,
   ],
   server: {
     allowedHosts: true,
